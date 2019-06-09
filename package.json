@@ -13,5 +13,8 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "build": "node src/js/server/build.js"
   }
 }

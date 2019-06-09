@@ -1,2 +1,3 @@
 node_modules
 *.sw?
+site/rendered_html
