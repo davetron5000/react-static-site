@@ -1,7 +1,18 @@
-import React from "react";
-const ReactDOMServer = require("react-dom/server");
-const Test = require("./Test");
+import path from "path";
+import fs from "fs";
 
-module.exports = function() {
-  console.log(ReactDOMServer.renderToStaticMarkup(<Test name="Bob"/>));
+import log from "./log";
+import Page from "./Page";
+import Renderer from "./Renderer";
+
+export default function({ source_path, output_path }) {
+
+  log(`Rendering from ${source_path} to ${output_path}`);
+
+  const pages_path = path.join(source_path, "pages");
+  const pages = fs.readdirSync(pages_path).filter(Page.matcher()).map(Page.factory({ pages_path: pages_path} ));
+  const renderer = new Renderer({ output_path: output_path });
+  const render_function = renderer.render_to_file.bind(renderer);
+
+  pages.forEach(render_function);
 }
