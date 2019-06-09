@@ -1,0 +1,16 @@
+{
+  "name": "react-static-site",
+  "version": "1.0.0",
+  "description": "Create a static site using React",
+  "main": "index.js",
+  "author": "David Copeland",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
