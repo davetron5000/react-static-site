@@ -11,21 +11,22 @@ export default class Page {
     return function(file) {
       if (file.match(/\.html\.jsx$/)) {
         return true;
-      }
-      else {
+      } else {
         log(`${file} is not a .jsx. Ignoring...`);
-        return false
+        return false;
       }
-    }
+    };
   }
 
   static factory({ pages_path }) {
     return function(file) {
       return new Page(path.join(pages_path, file));
-    }
+    };
   }
 
   get [Symbol.toStringTag]() {
-    return `{ Page path_to_page_source=${this.path_to_page_source} output_file_name=${this.output_file_name} }`;
+    return `{ Page path_to_page_source=${
+      this.path_to_page_source
+    } output_file_name=${this.output_file_name} }`;
   }
-};
+}

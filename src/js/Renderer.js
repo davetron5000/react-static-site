@@ -18,8 +18,8 @@ export default class Renderer {
 
     fs.writeFileSync(
       output_file,
-      "<!DOCTYPE html>" + 
-      ReactDOMServer.renderToStaticMarkup(React.createElement(component, {}))
+      "<!DOCTYPE html>" +
+        ReactDOMServer.renderToStaticMarkup(React.createElement(component, {}))
     );
   }
-};
+}
