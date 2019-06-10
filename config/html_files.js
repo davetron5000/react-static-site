@@ -14,6 +14,7 @@ module.exports = function(plugin_config) {
             plugin_config,
             {
               template: "./site/rendered_html/" + htmlFile,
+              publishDate: (new Date()).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
               filename: htmlFile
             }
           )
