@@ -1,9 +1,11 @@
 import path from "path";
 import fs from "fs";
 
-import log from "./log";
+import logger from "./log";
 import Page from "./Page";
 import Renderer from "./Renderer";
+
+const log = logger("render.js");
 
 export default function({ source_path, output_path }) {
   log(`Rendering from ${source_path} to ${output_path}`);

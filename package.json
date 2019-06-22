@@ -28,11 +28,12 @@
     "webpack_args": " --config webpack.config.js --display-error-details"
   },
   "scripts": {
-    "build": "node src/js/build.js",
+    "build:once": "node src/js/build.js",
+    "build:watch": "node src/js/build.js --watch",
     "fmt": "prettier --no-color --write 'src/js/**/*.js'",
-    "serve": "yarn build && $(yarn bin)/webpack-dev-server --open",
-    "webpack": "yarn build && webpack $npm_package_config_webpack_args",
-    "webpack:production": "yarn build && webpack $npm_package_config_webpack_args --env=production",
+    "serve": "$(yarn bin)/webpack-dev-server --open",
+    "webpack": "yarn build:once && webpack $npm_package_config_webpack_args",
+    "webpack:production": "yarn build:once && webpack $npm_package_config_webpack_args --env=production",
     "clean": "rm -rf dev production"
   }
 }

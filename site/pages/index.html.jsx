@@ -10,7 +10,7 @@ export default function(props) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="copyright" href="«link to your copyright statement»" />
 
-    <title>Brutalist Web Design</title>
+    <title>«site title»</title>
 
     <SocialMediaCardMetadata
       description="«description»"

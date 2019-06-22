@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import path from "path";
 import fs from "fs";
-import log from "./log";
+import logger from "./log";
+
+const log = logger("Renderer.js");
 
 export default class Renderer {
   constructor({ output_path }) {
@@ -14,6 +16,7 @@ export default class Renderer {
 
     log(`Rendering ${page} to ${output_file}`);
 
+    delete require.cache[require.resolve(page.path_to_page_source)];
     const component = require(page.path_to_page_source).default;
 
     fs.writeFileSync(

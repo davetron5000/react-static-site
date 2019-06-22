@@ -1,5 +1,7 @@
 import path from "path";
-import log from "./log";
+import logger from "./log";
+
+const log = logger("Page.js");
 
 export default class Page {
   constructor(path_to_page_source) {
