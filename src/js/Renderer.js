@@ -4,13 +4,14 @@ import path from "path";
 import fs from "fs";
 import logger from "./log";
 
-const log = logger("Renderer.js");
+const log = logger(path.basename(__filename));
 
 export default class Renderer {
   constructor({ output_path }) {
     this.output_path = output_path;
   }
 
+  // Renders the given Page object to the output path
   render_to_file(page) {
     const output_file = path.join(this.output_path, page.output_file_name);
 

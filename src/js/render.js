@@ -5,7 +5,7 @@ import logger from "./log";
 import Page from "./Page";
 import Renderer from "./Renderer";
 
-const log = logger("render.js");
+const log = logger(path.basename(__filename));
 
 export default function({ source_path, output_path }) {
   log(`Rendering from ${source_path} to ${output_path}`);
