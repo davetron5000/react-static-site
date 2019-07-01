@@ -4,9 +4,9 @@ import logger from "./log";
 const log = logger(path.basename(__filename));
 
 export default class Page {
-  constructor(path_to_page_source) {
+  constructor(pages_root, path_to_page_source) {
     this.path_to_page_source = path_to_page_source;
-    this.output_file_name = path.basename(path_to_page_source, ".jsx");
+    this.output_file_name = path_to_page_source.replace(pages_root,"").replace(/\.jsx$/,"");
   }
 
   // Returns a matcher to determine if a given file is a page or not
@@ -23,9 +23,9 @@ export default class Page {
 
   // Returns a function that will create new pages in the given path.  This
   // allows you to specify the pages path only once
-  static factory({ pages_path }) {
+  static factory({ pages_root }) {
     return function(file) {
-      return new Page(path.join(pages_path, file));
+      return new Page(pages_root, file);
     };
   }
 
