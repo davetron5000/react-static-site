@@ -29,7 +29,7 @@ export default function(props) {
           <img src="images/washington-dc-ec-02-station-small.jpg" alt="Washington DC Engine Company 02's Fire Station" className="db ba b--silver" nopin="nopin" />
           <figcaption>
             An example of using an image and linking to a larger one.
-            { " " }<a href="images/washington-dc-ec-02-station.png" target="_new">View full-size (11MB)</a>.
+            { " " }<a href="images/washington-dc-ec-02-station.jpg" target="_new">View full-size (11MB)</a>.
           </figcaption>
         </figure>
       </article>
